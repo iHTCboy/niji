@@ -4,7 +4,7 @@ from django.db.models import F
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext as _
 from functools import partial
@@ -61,13 +61,13 @@ class TopicQueryset(models.QuerySet):
 
 @python_2_unicode_compatible
 class Topic(models.Model):
-    user = models.ForeignKey(USER_MODEL, related_name='topics', verbose_name=_("user"))
+    user = models.ForeignKey(USER_MODEL, related_name='topics', verbose_name=_("user"), on_delete=models.CASCADE)
     title = models.CharField(max_length=120, verbose_name=_("title"))
     content_raw = models.TextField(verbose_name=_("raw content"))
     content_rendered = models.TextField(default='', blank=True, verbose_name=_("rendered content"))
     view_count = models.IntegerField(default=0, verbose_name=_("view count"))
     reply_count = models.IntegerField(default=0, verbose_name=_("reply count"))
-    node = models.ForeignKey('Node', related_name='topics', verbose_name=_("node"))
+    node = models.ForeignKey('Node', related_name='topics', verbose_name=_("node"), on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name=_("published time"))
     last_replied = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name=_("last replied time"))
     order = models.IntegerField(default=10, verbose_name=_("order"))
@@ -121,8 +121,8 @@ class PostQueryset(models.QuerySet):
 
 @python_2_unicode_compatible
 class Post(models.Model):
-    topic = models.ForeignKey('Topic', related_name='replies', verbose_name=_("topic"))
-    user = models.ForeignKey(USER_MODEL, related_name='posts', verbose_name=_("user"))
+    topic = models.ForeignKey('Topic', related_name='replies', verbose_name=_("topic"), on_delete=models.CASCADE)
+    user = models.ForeignKey(USER_MODEL, related_name='posts', verbose_name=_("user"), on_delete=models.CASCADE)
     content_raw = models.TextField(verbose_name=_("raw content"))
     content_rendered = models.TextField(default='', verbose_name=_("rendered content"))
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name=_("published time"))
@@ -161,10 +161,10 @@ class Post(models.Model):
 
 @python_2_unicode_compatible
 class Notification(models.Model):
-    sender = models.ForeignKey(USER_MODEL, related_name='sent_notifications', verbose_name=_("sender"))
-    to = models.ForeignKey(USER_MODEL, related_name='received_notifications', verbose_name=_("recipient"))
-    topic = models.ForeignKey('Topic', null=True, verbose_name=_("topic"))
-    post = models.ForeignKey('Post', null=True, verbose_name=_("reply"))
+    sender = models.ForeignKey(USER_MODEL, related_name='sent_notifications', verbose_name=_("sender"), on_delete=models.CASCADE)
+    to = models.ForeignKey(USER_MODEL, related_name='received_notifications', verbose_name=_("recipient"), on_delete=models.CASCADE)
+    topic = models.ForeignKey('Topic', null=True, verbose_name=_("topic"), on_delete=models.CASCADE)
+    post = models.ForeignKey('Post', null=True, verbose_name=_("reply"), on_delete=models.CASCADE)
     read = models.BooleanField(default=False, verbose_name=_("read"))
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name=_("published time"))
 
@@ -174,7 +174,7 @@ class Notification(models.Model):
 
 @python_2_unicode_compatible
 class Appendix(models.Model):
-    topic = models.ForeignKey('Topic', verbose_name=_("topic"))
+    topic = models.ForeignKey('Topic', verbose_name=_("topic"), on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True, verbose_name=_("published time"))
     content_raw = models.TextField(verbose_name=_("raw content"))
     content_rendered = models.TextField(default='', blank=True, verbose_name=_("rendered content"))
@@ -216,7 +216,7 @@ class NodeGroup(models.Model):
 
 @python_2_unicode_compatible
 class ForumAvatar(models.Model):
-    user = models.OneToOneField(USER_MODEL, related_name='forum_avatar')
+    user = models.OneToOneField(USER_MODEL, related_name='forum_avatar', on_delete=models.CASCADE)
     use_gravatar = models.BooleanField(default=False)
     image = models.ImageField(max_length=255,
                               upload_to='uploads/forum/avatars/',

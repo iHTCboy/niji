@@ -2,7 +2,7 @@ from django import template
 from django.utils.html import escape
 from django.contrib.auth.models import User
 from six.moves.urllib.parse import urlencode, urlparse, parse_qs
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from niji.models import ForumAvatar
 import hashlib
 
