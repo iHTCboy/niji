@@ -27,7 +27,7 @@ source venv/bin/activate
 3、安装 requirements.txt 运行环境依赖
 
 ```bash
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 4、创建数据库模型（ORM）
@@ -53,7 +53,7 @@ python manage.py createsuperuser
 输入命令后，会提示输入`用户名`(区分大小写)，`邮箱`(方便django邮件通知管理员)，`密码`（不能设置太简单！），大概如下：
 ```bash
 Username (leave blank to use 'niji'): HTC
-Email address: ihetiancong@efun.com
+Email address: ihetiancong@gmail.com
 Password:
 Password (again):
 Superuser created successfully.
