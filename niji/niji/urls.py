@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url, include
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework import routers
 from niji import api
 from niji import views
@@ -32,5 +31,6 @@ urlpatterns = [
     url(r'^t/create/$', views.create_topic, name='create_topic'),
     url(r'^notifications/$', views.NotificationView.as_view(), name='notifications'),
     url(r'^avatar/$', views.upload_avatar, name="upload_avatar"),
+    url(r'^uploads/(?P<path>.*?)/(?P<subpath>.*?)/(?P<filename>.*?)/$', views.get_upload_file, name="get_upload_file"),
     url(r'^api/', include(api_router.urls)),
 ]

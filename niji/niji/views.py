@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponseForbidden
+from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -14,6 +15,7 @@ from .models import Topic, Node, Post, Notification, ForumAvatar
 from .forms import TopicForm, TopicEditForm, AppendixForm, ForumAvatarForm, ReplyForm
 from .misc import get_query
 import re
+import os
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 User = get_user_model()
@@ -259,6 +261,19 @@ def upload_avatar(request):
             form = ForumAvatarForm()
 
     return render(request, 'niji/upload_avatar.html', {'form': form, 'title': _('Upload Avatar')})
+
+
+def get_upload_file(request, path, subpath, filename):
+    file_path = os.getcwd() + '/uploads/{}/{}/{}'.format(path, subpath, filename)
+    if os.path.isfile(file_path):
+        try:
+            with open(file_path, 'rb') as f:
+                image_data = f.read()
+            return HttpResponse(image_data, content_type="image/png")
+        except Exception as e:
+            print(e)
+
+    return HttpResponse(str('404: Not Found'))
 
 
 @login_required

@@ -26,8 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'niji',
-    'rest_framework',
     'pagedown',
+    #'rest_framework',
 ]
 
 MIDDLEWARE = [

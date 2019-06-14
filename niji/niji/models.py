@@ -14,11 +14,15 @@ from io import BytesIO
 import xxhash
 import mistune
 import re
+import importlib
 import six
 if six.PY2:
     import sys
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
+    importlib.reload(sys) # 设置python的默认编码,Python3字符串默认编码unicode
+    #
+    # import sys
+    # reload(sys)
+    # sys.setdefaultencoding('utf-8')
 
 
 MENTION_REGEX = re.compile(r'@(\S+)', re.M)
