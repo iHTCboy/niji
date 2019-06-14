@@ -10,6 +10,8 @@ Django-NIJI is a pluggable forum app for Django projects.
 #### Docs
 > http://django-niji.rtfd.io
 
+### 说明
+源作者仓库是插件形式使用，新手研究学习不太会跑起来，所以fork下来，自己瞎搞了一下，可以在 Pyhton3.7 + Django 2.2.2 上运行。
 
 #### Run
 
