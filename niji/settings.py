@@ -110,3 +110,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGE_SIZE': 10
 }
+
+
+# Form UI Settings
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Site Name
+NIJI_SITE_NAME = "iHTCboy 技术论坛"
+
