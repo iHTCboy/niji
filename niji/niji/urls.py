@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^notifications/$', views.NotificationView.as_view(), name='notifications'),
     url(r'^avatar/$', views.upload_avatar, name="upload_avatar"),
     url(r'^uploads/(?P<path>.*?)/(?P<subpath>.*?)/(?P<filename>.*?)/$', views.get_upload_file, name="get_upload_file"),
+    url(r'^.*?/uploads/(?P<path>.*?)/(?P<subpath>.*?)/(?P<filename>.*?)/$', views.get_upload_file, name="get_upload_file"),
     url(r'^api/', include(api_router.urls)),
 ]
