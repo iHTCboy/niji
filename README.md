@@ -13,6 +13,10 @@ Django-NIJI is a pluggable forum app for Django projects.
 ### 说明
 源作者仓库是插件形式使用，新手研究学习不太会跑起来，所以fork下来，自己瞎搞了一下，可以在 Pyhton3.7 + Django 2.2.2 上运行。
 
+#### 示例
+
+> [技术论坛 - https://iHTCboy.pythonanywhere.com](https://iHTCboy.pythonanywhere.com)
+
 #### Run
 
 1、cd到niji文件夹下（requirements.txt文件目录下），创建项目的虚拟环境：
