@@ -25,3 +25,9 @@
 #id_content_raw_wmd_button_bar {
     overflow: auto;
 }
+
+.wmd-panel img, .topic-content img {
+    width: auto;
+    max-width: 100%;
+}
+
