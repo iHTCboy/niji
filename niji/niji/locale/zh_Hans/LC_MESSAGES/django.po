@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-18 03:48+0000\n"
+"POT-Creation-Date: 2019-06-28 04:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,52 +18,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: forms.py:20 forms.py:32 forms.py:49 forms.py:60 forms.py:76
+#: niji/forms.py:20 niji/forms.py:32 niji/forms.py:49 niji/forms.py:60
+#: niji/forms.py:76
 msgid "Content"
 msgstr "内容"
 
-#: forms.py:26 forms.py:54 forms.py:70 forms.py:94 forms.py:123
-#: templates/niji/login.html:23 templates/niji/reg.html:31
+#: niji/forms.py:26 niji/forms.py:54 niji/forms.py:70 niji/forms.py:94
+#: niji/forms.py:123 niji/templates/niji/login.html:23
+#: niji/templates/niji/reg.html:31
 msgid "Submit"
 msgstr "提交"
 
-#: forms.py:33
+#: niji/forms.py:33
 msgid "Node"
 msgstr "节点"
 
-#: forms.py:34
+#: niji/forms.py:34
 msgid "Title"
 msgstr "标题"
 
-#: forms.py:100
+#: niji/forms.py:100
 msgid "Avatar Image"
 msgstr "头像图片"
 
-#: forms.py:101
+#: niji/forms.py:101
 msgid "Always Use Gravatar"
 msgstr "始终使用 Gravatar"
 
-#: templates/niji/base.html:36 templates/niji/base.html:38
+#: niji/models.py:68 niji/models.py:129
+msgid "user"
+msgstr ""
+
+#: niji/models.py:69 niji/models.py:205
+#, fuzzy
+#| msgid "Title"
+msgid "title"
+msgstr "标题"
+
+#: niji/models.py:70 niji/models.py:130 niji/models.py:183
+#, fuzzy
+#| msgid "Content"
+msgid "raw content"
+msgstr "内容"
+
+#: niji/models.py:71 niji/models.py:131 niji/models.py:184
+msgid "rendered content"
+msgstr ""
+
+#: niji/models.py:72
+msgid "view count"
+msgstr ""
+
+#: niji/models.py:73
+#, fuzzy
+#| msgid "%(reply_count)s Reply"
+#| msgid_plural "%(reply_count)s Replies"
+msgid "reply count"
+msgstr "%(reply_count)s条回复"
+
+#: niji/models.py:74
+msgid "node"
+msgstr ""
+
+#: niji/models.py:75 niji/models.py:132 niji/models.py:173 niji/models.py:182
+msgid "published time"
+msgstr ""
+
+#: niji/models.py:76
+#, fuzzy
+#| msgid "Last Replied"
+msgid "last replied time"
+msgstr "最后回复"
+
+#: niji/models.py:77
+msgid "order"
+msgstr ""
+
+#: niji/models.py:78 niji/models.py:133
+msgid "hidden"
+msgstr ""
+
+#: niji/models.py:79
+msgid "closed"
+msgstr ""
+
+#: niji/models.py:128 niji/models.py:170 niji/models.py:181
+#, fuzzy
+#| msgid "Edit Topic"
+msgid "topic"
+msgstr "编辑主题"
+
+#: niji/models.py:168
+msgid "sender"
+msgstr ""
+
+#: niji/models.py:169
+msgid "recipient"
+msgstr ""
+
+#: niji/models.py:171
+#, fuzzy
+#| msgid "Reply"
+msgid "reply"
+msgstr "回复"
+
+#: niji/models.py:172
+msgid "read"
+msgstr ""
+
+#: niji/models.py:206
+msgid "description"
+msgstr ""
+
+#: niji/templates/niji/base.html:38 niji/templates/niji/base.html:40
 msgid "Search"
 msgstr "搜索"
 
-#: templates/niji/includes/list.html:39 templates/niji/user_info.html:35
+#: niji/templates/niji/includes/list.html:59
+#: niji/templates/niji/user_info.html:35
 msgid "Last Replied"
 msgstr "最后回复"
 
-#: templates/niji/login.html:16 templates/niji/reg.html:16
+#: niji/templates/niji/login.html:16 niji/templates/niji/reg.html:16
 msgid "Username"
 msgstr "用户名"
 
-#: templates/niji/login.html:20 templates/niji/reg.html:24
+#: niji/templates/niji/login.html:20 niji/templates/niji/reg.html:24
 msgid "Password"
 msgstr "密码"
 
-#: templates/niji/notifications.html:9 views.py:252 views.py:276
+#: niji/templates/niji/notifications.html:9 niji/views.py:284 niji/views.py:308
 msgid "Notifications"
 msgstr "提醒"
 
-#: templates/niji/notifications.html:24
+#: niji/templates/niji/notifications.html:24
 #, python-format
 msgid ""
 "\n"
@@ -86,7 +174,7 @@ msgstr ""
 "                                        </a>\n"
 "                                    中@了你"
 
-#: templates/niji/notifications.html:35
+#: niji/templates/niji/notifications.html:35
 #, python-format
 msgid ""
 "\n"
@@ -109,68 +197,126 @@ msgstr ""
 "                                        </a>\n"
 "                                    时@了你"
 
-#: templates/niji/reg.html:20
+#: niji/templates/niji/reg.html:20
 msgid "Email"
 msgstr "Email"
 
-#: templates/niji/reg.html:28
+#: niji/templates/niji/reg.html:28
 msgid "Repeat Password"
 msgstr "重复密码"
 
-#: templates/niji/topic.html:25
+#: niji/templates/niji/topic.html:26
 #, python-format
 msgid "viewed %(view_count)s times"
 msgstr "%(view_count)s次浏览"
 
-#: templates/niji/topic.html:38
+#: niji/templates/niji/topic.html:39
 #, python-format
 msgid "appendix %(number)s"
 msgstr "第%(number)s条附言"
 
-#: templates/niji/topic.html:48
+#: niji/templates/niji/topic.html:49
 msgid "Edit"
 msgstr "编辑"
 
-#: templates/niji/topic.html:50
+#: niji/templates/niji/topic.html:51
 msgid "Append"
 msgstr "添加附言"
 
-#: templates/niji/topic.html:57
+#: niji/templates/niji/topic.html:56
+msgid "Moderations"
+msgstr ""
+
+#: niji/templates/niji/topic.html:78
 #, python-format
 msgid "%(reply_count)s Reply"
 msgid_plural "%(reply_count)s Replies"
 msgstr[0] "%(reply_count)s条回复"
 
-#: templates/niji/topic.html:59
+#: niji/templates/niji/topic.html:80
 msgid "No Replies"
 msgstr "暂无回复"
 
-#: templates/niji/topic.html:83
+#: niji/templates/niji/topic.html:104
 msgid "Reply"
 msgstr "回复"
 
-#: templates/niji/topic.html:88
+#: niji/templates/niji/topic.html:117
 msgid "Be the first to reply!"
 msgstr "暂无回复"
 
-#: templates/niji/topic.html:96
+#: niji/templates/niji/topic.html:125
 msgid "Leave a Reply"
 msgstr "添加回复"
 
-#: templates/niji/topic.html:106
-#, python-format
+#: niji/templates/niji/topic.html:129
+msgid "This topic is closed"
+msgstr ""
+
+#: niji/templates/niji/topic.html:140
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    Please <a href=\"%(login_url)s\">Login</a> or <a href="
+#| "\"%(reg_url)s\">Create a New User</a> to reply\n"
+#| "                "
 msgid ""
 "\n"
-"                    Please <a href=\"%(login_url)s\">Login</a> or <a href="
-"\"%(reg_url)s\">Create a New User</a> to reply\n"
-"                "
+"                            Please <a href=\"%(login_url)s\">Login</a> or <a "
+"href=\"%(reg_url)s\">Create a New User</a> to reply\n"
+"                        "
 msgstr ""
 "\n"
 "                    请先<a href=\"%(login_url)s\">登录</a> 或 <a href="
 "\"%(reg_url)s\">注册</a>\n"
 "                "
 
-#: templates/niji/user_info.html:11
+#: niji/templates/niji/topic.html:191
+msgid "Operation successful"
+msgstr ""
+
+#: niji/templates/niji/topic.html:210
+msgid "Stick to Top"
+msgstr ""
+
+#: niji/templates/niji/topic.html:213
+msgid "Level (1 - Highest)"
+msgstr ""
+
+#: niji/templates/niji/topic.html:218 niji/templates/niji/topic.html:224
+msgid "Don't stick to stop"
+msgstr ""
+
+#: niji/templates/niji/topic.html:235
+#, fuzzy
+#| msgid "New Topics"
+msgid "Open Topic"
+msgstr "最新主题"
+
+#: niji/templates/niji/topic.html:236 niji/templates/niji/topic.html:243
+#: niji/templates/niji/topic.html:250 niji/templates/niji/topic.html:257
+msgid "Please confirm your action"
+msgstr ""
+
+#: niji/templates/niji/topic.html:242
+#, fuzzy
+#| msgid "Create Topic"
+msgid "Close Topic"
+msgstr "创建主题"
+
+#: niji/templates/niji/topic.html:249
+#, fuzzy
+#| msgid "New Topics"
+msgid "Hide Topic"
+msgstr "最新主题"
+
+#: niji/templates/niji/topic.html:256
+#, fuzzy
+#| msgid "Reply"
+msgid "Hide Reply"
+msgstr "回复"
+
+#: niji/templates/niji/user_info.html:11
 #, python-format
 msgid ""
 "\n"
@@ -181,11 +327,11 @@ msgstr ""
 "                    %(username)s创建的主题\n"
 "                "
 
-#: templates/niji/user_info.html:46
+#: niji/templates/niji/user_info.html:46
 msgid "More topics from this user"
 msgstr "该用户的更多主题"
 
-#: templates/niji/user_info.html:54
+#: niji/templates/niji/user_info.html:54
 #, python-format
 msgid ""
 "\n"
@@ -196,15 +342,16 @@ msgstr ""
 "                    %(username)s发表的回复\n"
 "                "
 
-#: templates/niji/user_info.html:63
+#: niji/templates/niji/user_info.html:63
 msgid "Replied to"
 msgstr "回复"
 
-#: templates/niji/widgets/authenticated_user_panel.html:47 views.py:177
+#: niji/templates/niji/widgets/authenticated_user_panel.html:47
+#: niji/views.py:207
 msgid "Create Topic"
 msgstr "创建主题"
 
-#: templates/niji/widgets/authenticated_user_panel.html:54
+#: niji/templates/niji/widgets/authenticated_user_panel.html:54
 #, python-format
 msgid ""
 "\n"
@@ -223,95 +370,95 @@ msgstr[1] ""
 "                        %(unread_count)s条未读提醒\n"
 "                    "
 
-#: templates/niji/widgets/authenticated_user_panel.html:60
+#: niji/templates/niji/widgets/authenticated_user_panel.html:60
 msgid "No new nofitications"
 msgstr "暂无未读提醒"
 
-#: templates/niji/widgets/authenticated_user_panel.html:67
+#: niji/templates/niji/widgets/authenticated_user_panel.html:67
 msgid "Log out"
 msgstr "登出"
 
-#: templates/niji/widgets/nodes.html:3
+#: niji/templates/niji/widgets/nodes.html:3
 msgid "Nodes"
 msgstr "节点"
 
-#: templates/niji/widgets/pagedown.html:9
+#: niji/templates/niji/widgets/pagedown.html:9
 msgid "Preview"
 msgstr "预览"
 
-#: templates/niji/widgets/visitor_user_panel.html:9
+#: niji/templates/niji/widgets/visitor_user_panel.html:9
 msgid "Log in"
 msgstr "登入"
 
-#: templates/niji/widgets/visitor_user_panel.html:12 views.py:311
+#: niji/templates/niji/widgets/visitor_user_panel.html:12 niji/views.py:343
 msgid "Reg"
 msgstr "注册"
 
-#: views.py:37
+#: niji/views.py:57
 msgid "New Topics"
 msgstr "最新主题"
 
-#: views.py:38
+#: niji/views.py:58
 msgid "Index"
 msgstr "首页"
 
-#: views.py:155
+#: niji/views.py:184
 msgid "Search: "
 msgstr "搜索: "
 
-#: views.py:184
+#: niji/views.py:214
 msgid "Editing is not allowed when topic has been replied"
 msgstr "主题被回复后不可编辑"
 
-#: views.py:186
+#: niji/views.py:216
 msgid "You are not allowed to edit other's topic"
 msgstr "你不能编辑他人的主题"
 
-#: views.py:195
+#: niji/views.py:225
 msgid "Edit Topic"
 msgstr "编辑主题"
 
-#: views.py:202
+#: niji/views.py:232
 msgid "You are not allowed to append other's topic"
 msgstr "你不能给他人的主题添加附言"
 
-#: views.py:212
+#: niji/views.py:242
 msgid "Create Appendix"
 msgstr "添加附言"
 
-#: views.py:244
+#: niji/views.py:263
 msgid "Upload Avatar"
 msgstr "上传头像"
 
-#: views.py:282
+#: niji/views.py:314
 msgid "Login"
 msgstr "登入"
 
-#: views.py:289
+#: niji/views.py:321
 msgid "Username and password cannot be empty"
 msgstr "用户名和密码不能为空"
 
-#: views.py:293
+#: niji/views.py:325
 msgid "User does not exist"
 msgstr "该用户不存在"
 
-#: views.py:301
+#: niji/views.py:333
 msgid "User deactivated"
 msgstr "该用户被禁用"
 
-#: views.py:304
+#: niji/views.py:336
 msgid "Incorrect password"
 msgstr "密码错误"
 
-#: views.py:320
+#: niji/views.py:352
 msgid "User already exists"
 msgstr "用户已存在"
 
-#: views.py:323
+#: niji/views.py:355
 msgid "Password does not match"
 msgstr "两次密码不匹配"
 
-#: views.py:326
+#: niji/views.py:358
 msgid "Invalid Email"
 msgstr "邮箱格式不正确"
 
